@@ -31,9 +31,12 @@ Inductor is not installed as part of above setup.
 
 1. Import inductor design into new assembly.
 2. Edit the inductor component to copy DAQ cert into perf cert location, Eslog cert into log stash cert and Wire cert into attachment — ssl-certificate.
+
 3.In case you want to stub the inductor:
-   3.1. cat /opt/oneops/inductor/clouds-available/shared/conf/vmargs
+   3.1. cat /opt/oneops/inductor/clouds-available/shared/conf/vmargs.
+   
    3.2.  Append below to above file
              -Dstub.clouds=openstack -DstubResultCode=0 -Dstub.responseTimeInSeconds=1
+             
    3.3. restart inductor
              su -l ooadmin -c "cd /opt/oneops/inductor && inductor restart"
